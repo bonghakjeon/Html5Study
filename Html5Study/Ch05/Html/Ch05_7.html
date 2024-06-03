@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { font-size: 15pt }
+        input[type="text"]:focus { color: red; font-style: italic }
+        input[type="text"]:enabled { background-color: yellow;}
+        input:disabled { background-color: black; }
+        input:checked { width: 25px; height: 25px }
+        input:not([type="text"]) { color:white }
+    </style>
+</head>
+<body>
+    이름: <input type="text" value="홍길동">
+    나이: <input type="number" value="25" disabled>
+    <input type="radio" checked>남자
+    <input type="radio">여자<br><br>
+    <input type="checkbox">골프
+    <input type="checkbox">테니스
+</body>
+</html>

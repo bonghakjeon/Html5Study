@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            width: 300px;
+            height: 200px;
+            margin: 30px; 
+            border: 1px solid blue;
+            font-weight: bold;
+        }
+        #transDiv1 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: translate(50px, 70px);
+        }
+        #scaleDiv1 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: scale(1, 1);
+        }
+        #scaleDiv2 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: scale(1.2, 1.5);
+        }
+        #scaleDiv3 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: scale(0.5, 0.7);
+        }
+        #rotateDiv1 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: rotate(30deg);
+        }
+        #rotateDiv2 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: rotate(-30deg);
+        }
+        #rotateDiv3 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: rotateX(60deg);
+        }
+        #rotateDiv4 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: rotateY(60deg);
+        }
+        #skewDiv1 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: skew(30deg, 30deg);
+        }
+        #skewDiv2 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: skewX(30deg);
+        }
+        #skewDiv3 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: skewY(30deg);
+        }
+        #matrixDiv1 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: matrix(1, -0.3, 0, 1, 0, 0);
+        }
+        #matrixDiv2 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: matrix(1, 0, 0.5, 1, 150, 0);
+        }
+        #transFormDiv1 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: translate(100px, 100px) scale(1.5, 0.8) rotate(30deg) skew(40deg);
+        }
+        #transOriginDiv1 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: rotate(30deg);
+            transform-origin: center center;
+        }
+        #transOriginDiv2 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: rotate(30deg);
+            transform-origin: left top;
+        }
+        #transOriginDiv3 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: rotate(30deg);
+            transform-origin: left bottom;
+        }
+        #transOriginDiv4 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: rotate(30deg);
+            transform-origin: right top;
+        }
+        #transOriginDiv5 {
+            width: 150px; 
+            height: 80px;
+            background-color: violet;
+            transform: rotate(30deg);
+            transform-origin: right bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div id="transDiv1">변환 transform</div>
+    </div>
+
+    <br><br>
+    
+    <div class="block">
+        <div id="scaleDiv1">변환 scale1</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="scaleDiv2">변환 scale2</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="scaleDiv3">변환 scale3</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="rotateDiv1">변환 rotate1</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="rotateDiv2">변환 rotate2</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="rotateDiv3">변환 rotate3</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="rotateDiv4">변환 rotate4</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="skewDiv1">변환 skew1</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="skewDiv2">변환 skew2</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="skewDiv3">변환 skew3</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="matrixDiv1">변환 matrix1</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="matrixDiv2">변환 matrix2</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="transFormDiv1">다중 변환 transForm1</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="transOriginDiv1">다중 변환 transOriginDiv1</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="transOriginDiv2">다중 변환 transOriginDiv2</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="transOriginDiv3">다중 변환 transOriginDiv3</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="transOriginDiv4">다중 변환 transOriginDiv4</div>
+    </div>
+
+    <br><br>
+
+    <div class="block">
+        <div id="transOriginDiv5">다중 변환 transOriginDiv5</div>
+    </div>
+
+    <br><br>
+</body>
+</html>

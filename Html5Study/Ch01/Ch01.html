@@ -1,0 +1,37 @@
+<!--  html 코드 실행시 기본 브라우저 chrome 설정 방법  -->
+<!--  참고 URL - https://webroadcast.tistory.com/49  -->
+
+<!--  아래 DOCTYPE 자동 완성 하려면 ! + Tab 키를 누르면 된다.  -->
+<!DOCTYPE html>  <!--  웹 브라우저에게 페이지를 올바르게 표시할 수 있도록 문서 형식(html5)을 알려주는 지시어 - 반드시 첫 줄에 위치 -->
+<html lang="en"> <!--  웹 페이지의 루트 요소 - HTML 문서의 시작과 끝을 알려줌.  -->
+<head> <!--  웹 문서 자체에 대한 메타 정보를 포함 - 화면에 표시되지 않음. (메타 요소 - title, link, style, script, meta, base)  -->
+    <!--  메타 데이터 - 웹 문서에 대한 다양한 메타 데이터(문자 인코딩 방식 - charset="UTF-8")를 나타낼 때 사용  -->
+    <meta charset="UTF-8">  
+    <!--  메타 데이터  -웹 문서에 대한 다양한 메타 데이터(내용 설명 - name="description" / 키워드 - name="keywords" / 저작자 - name="author" )를 나타낼 때 사용 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  =
+    <title>Document</title> <!--  제목 - 웹 브라우저 상단(탭)에 문서의 제목을 표시할 때 사용 (즐겨찾기 제목, 검색 엔진의 출력된 결과 페이지 제목으로 사용)  -->
+    <link rel="stylesheet" href="test.css" />  <!--  별도로 지정한 CSS 스타일 파일(*.css)을 가져와 웹 문서에 적용할 때 사용(문서의 body 부분에 포함 가능)  -->
+    <style></style>  <!--  웹 문서 전체에 적용할 CSS 스타일을 정의할 때 사용  -->
+    <base href="http://cs.knou.ac.kr/html5"/> <!--  웹 문서의 기본 URL 경로 지정 -->
+
+    <base target="_blank"/> <!--  웹 문서가 출력될 타깃 윈도우(_blank - 새로운 창) 지정  -->
+    <base target="_self"/> <!--  웹 문서가 출력될 타깃 윈도우(_self - 현재 윈도우 창) 지정  -->
+    
+    <!--  웹 페이지가 출력될 타깃 윈도우 지정  -->
+</head>
+<body> <!--  웹 브라우저 화면에 실제로 출력해서 보여주려는 문서의 본문에 해당하는 모든 내용을 포함하는 부분  -->
+    <!--  <body> 요소 내의 상대 경로로 표시된 url(href="ex.html")을 <head> 부분에 포함되는 <base>요소의 url(href="http://cs.knou.ac.kr/html5")  -->
+    <!--  사용해서 절대 경로로 취급(href="http://cs.knou.ac.kr/html5/ex.html") -->
+    <a href="ex.html"> 
+
+    <!--  <head> 부분에 포함되는 <base>요소의 target(target="_blank")일 경우 연결된 html 문서(href="ex.html")가 새로운 창에서 열림  -->
+    <a href="ex.html">
+
+    <!--  <head> 부분에 포함되는 <base>요소의 target(target="_self")일 경우 연결된 html 문서(href="ex.html")가 현재 윈도우 창에서 열림  -->
+        <a href="ex.html">
+
+    <!--  문서의 본문 내용 (텍스트, 이미지, 링크, 테이블 등...)  -->
+    <!--  자바스크립트 코드 위치 가능  -->
+    <script src="test.js"></script> <!--  자바스크립트 코드를 작성(또는 외부 코드 링크)할 때 사용  --> 
+</body>
+</html>

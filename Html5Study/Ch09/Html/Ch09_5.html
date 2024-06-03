@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes myAnimation {
+            from { background-color: red;
+                   left: 0px;
+                   top: 0px; }
+            25% { background-color: yellow;
+                  left: 200px;
+                  top: 0px; }
+            50% { background-color: cyan;
+                  left: 200px;
+                  top: 200px; }
+            75% { background-color: lime;
+                  left: 0px;
+                  top: 200px; }
+            to { background-color: red;
+                 left: 0px;
+                 top: 0px; }
+        }
+        @keyframes myAnimation1 {
+            from { top: 0px }
+            to { top: 200px }
+        }
+        @keyframes myAnimation2 {
+            0% { width: 100px;
+                 background-color: red; }
+            30% { width: 150px;
+                  background-color: green; }
+            50% { width: 200px;
+                  background-color: blue; }
+            80% { width: 150px;
+                  background-color: green; }
+            100% { width: 100px;
+                   background-color: red; }
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+        }
+        #div1 {
+            animation-name: myAnimation;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+        }
+        #div2 {
+            animation: myAnimation 5s linear 2s infinite alternate forwards running;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">div1 animation 속성</div>
+
+    <br><br>
+
+    <div id="div2">div2 animation 속성</div>
+
+    <br><br>
+</body>
+</html>
