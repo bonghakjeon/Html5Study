@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--  onload - 웹 문서나 이미지가 로딩이 완료되는 순간 발생하는 이벤트  -->
+<body onload="start()">
+    <p id="p">텍스트 위에 마우스 커서를 위치시켜 보세요</p>
+    <script>
+        let myP;
+        function start() {
+            myP = document.getElementById("p");          // 함수 getElementById 호출 - id 값이 "p"를 가지고 있는 요소<p>에 접근 
+            myP.addEventListener("mouseover", change);         // 함수 addEventListener 호출 방식 1 - 이벤트 "mouseover" 처리
+            // myP.onmouseover = change;                       // 함수 addEventListener 호출 방식 2 - 이벤트 "mouseover" 처리
+            // myP.addEventListener("mouseover", function() {  // 함수 addEventListener 호출 방식 3(함수 이름이 없는 익명함수 형태) - 이벤트 "mouseover" 처리
+            //     this.style.backgroundColor = "yellow";
+            //     this.style.color = "red";
+            // });
+            
+            myP.addEventListener("mouseout", restore);   // 함수 addEventListener 호출 - 이벤트 "mouseout" 처리 
+            // myP.onmouseout = restore;
+        }
+        function change() {
+            myP.style.backgroundColor = "yellow";
+            myP.style.color = "red";
+        }
+        function restore() {
+            myP.style.backgroundColor = "white";
+            myP.style.color = "black";
+        }
+    </script>
+</body>
+</html>
