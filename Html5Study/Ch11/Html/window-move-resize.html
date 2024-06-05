@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="window.resizeTo(500, 350)">
+    <p>브라우저 크기 조정</p>
+    <input type="button" value="확대"
+           onclick="window.resizeBy(20, 20)">
+    <input type="button" value="축소"
+           onclick="window.resizeBy(-20, -20)">
+    <br/><br/><hr>
+    <p>브라우저 위치 조정</p>
+    <input type="button" onclick="window.moveBy(0, -20)" value="상">
+    <input type="button" onclick="window.moveBy(0, 20)" value="하">
+    <input type="button" onclick="window.moveBy(-20, 0)" value="좌">
+    <input type="button" onclick="window.moveBy(20, 0)" value="우">
+    <input type="button" onclick="window.moveTo(0, 0)" value="원위치">
+</body>
+</html>
