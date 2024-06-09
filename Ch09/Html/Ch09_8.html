@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid red;
+            column-count: 3;
+            column-gap: 40px;
+            column-rule: 3px dotted blue;
+        }
+
+        h2 { background-color: yellow; }
+
+        #test1 { column-span: none; }
+
+        #test2 { column-span: all; }
+    </style>
+</head>
+<body>
+    <div>
+        <h2 id="test1">Cascading Style Sheet Level 3</h2>
+        HTML이 HTML4.01에서 HTML5로 업그레이드가 되는 동안...
+    </div>
+
+    <br><br>
+
+    <div>
+        <h2 id="test2">Cascading Style Sheet Level 3</h2>
+        HTML이 HTML4.01에서 HTML5로 업그레이드가 되는 동안...
+    </div>
+
+    <br><br>
+</body>
+</html>

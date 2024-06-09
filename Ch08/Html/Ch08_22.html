@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 150px;
+            width: 150px; 
+            background-color: violet;
+            border: 1px dotted blue;
+            font-weight: bold;
+            transform: rotateY(180deg);
+        }
+        #backHidden {
+            backface-visibility: hidden;
+        }
+        #backVisible {
+            backface-visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div id="backHidden">요소의 뒷면 숨기기</div>
+
+    <br><br>
+
+    <div id="backVisible">요소의 뒷면 보이기</div>
+
+    <br><br>
+</body>
+</html>

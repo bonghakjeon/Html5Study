@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 100px;
+            position: relative;
+            left: 10px;
+            background-color: orange;
+        }
+        div:hover {
+            width: 300px;
+            left: 200px;
+            background-color: red;
+        }
+        #div1 {
+            transition-property: width, left, background-color;
+            transition-duration: 2s, 2s, 2s;
+            transition-timing-function : ease-in, linear, ease-in-out;
+            transition-delay: 0s, 1s, 1s;
+        }
+        #div2 {
+            transition: width 2s ease-in 0s,
+                        left 2s linear 1s,
+                        background-color 2s ease-in-out 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">div1 테스트</div>
+
+    <br><br>
+
+    <div id="div2">div2 테스트</div>
+</body>
+</html>

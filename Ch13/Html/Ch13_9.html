@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        canvas.width=500;
+        canvas.height=500;
+        canvas.style.backgroundColor="lightyellow";
+        
+        ctx.beginPath();
+        ctx.font="italic 40pt 궁서체";
+        ctx.strokeStyle="red";
+        ctx.lineWidth=2;
+        ctx.strokeText("컴퓨터과학 HTML5", 20, 65);
+    </script>
+</body>
+</html>

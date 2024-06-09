@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div { width: 400px; background: lightgreen; }
+    </style>
+    <script>
+        function print() {
+            let msg = prompt("출력하고 싶은 내용을 입력하세요", "<b>Hi, Everyone!</b>");
+            let myDiv = document.getElementById("main");
+            myDiv.innerHTML = msg;
+        }
+    </script>
+</head>
+<body>
+    <div id="main">안녕하세요?</div><br/>
+    <input type="button" value="클릭해 보세요!" onclick="print()">
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="displayTime();">
+    <div id="clock"></div>
+    <script>
+        function displayTime() {
+            today = new Date();
+            today = today.toLocaleString();
+            let clock = document.getElementById("clock");
+            clock.style.backgroundColor = "yellow";
+            clock.style.color = "blue";
+            clock.style.fontWeight = "bold";
+            clock.innerHTML = today;
+            setTimeout("displayTime()", 1000);   // 함수 setTimeout 재귀적 호출 해서 1초 간격으로 현재 시간 웹 브라우저 화면에 출력
+        } 
+    </script>    
+</body>
+</html>

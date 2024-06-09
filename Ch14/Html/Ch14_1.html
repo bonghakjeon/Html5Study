@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="init();">
+    <div style="text-align:center">
+        <button id="play" onclick="playPause()">재생하기</button>
+        <button onclick="sizeUp()">큰 화면(50씩 커짐)</button>
+        <button onclick="sizeDown()">작은 화면(50씩 작아짐)</button>
+        <button onclick="sizeNormal()">원래 크기(350)의 화면</button>
+        <br><br>
+
+        <video id="video" width="350">
+            이 브라우저는 video 요소를 지원하지 않습니다.
+        </video>
+    </div>   
+    <script>
+        let my, play;   // video 요소 및 '재생하기' 버튼에 대한 객체 변수 
+
+        function init() { 
+            myVideo = document.getElementById("video");
+            play = document.getElementById('play');
+            isSupp = myVideo.canPlayType("video/mp4");
+            if (isSupp != "") {
+                myVideo.src = "../../Video/Ch03_2.mp4";
+                myVideo.load();
+            }
+        }
+        function playPause() { }
+        function sizeUp() { }
+        function sizeDown() { }
+        function sizeNormal() { }
+    </script> 
+</body>
+</html>

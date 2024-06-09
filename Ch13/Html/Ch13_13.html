@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        canvas.width=800;
+        canvas.height=500;
+        canvas.style.backgroundColor="lightyellow";
+        
+
+        ctx.beginPath();
+        ctx.strokeStyle = "red";
+        ctx.setLineDash([3]);
+        let img = new Image();
+        img.src = "../../Image/android.jpg";
+        img.onload = function() {
+            ctx.drawImage(img, 10, 10);
+            ctx.strokeRect(10, 10, 267, 308);
+
+            ctx.drawImage(img, 300, 10, 100, 100);
+            ctx.strokeRect(300, 10, 100, 100);
+
+            ctx.drawImage(img, 45, 0, 170, 200, 430, 10, 200, 250);
+            ctx.strokeRect(430, 10, 200, 250);
+        }
+    </script>
+</body>
+</html>

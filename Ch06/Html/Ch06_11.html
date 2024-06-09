@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text1 { text-shadow: 0.2em 0.2em rgb(0,255,0); } /* 수평 - 0.2em, 수직 - 0.2em */
+
+        .text2 { text-shadow: 7px 7px 5px red;} /* 수평 - 7px, 수직 - 7px, 5px는 그림자 흐려지는(번지는) 정도 의미 */
+
+         /* 수평 : 7px 수직 : 7px,  수평 : -5px 수직 : 5px, 수평 : 7px 수직 : -7px*/
+        .text3 { text-shadow: 7px 7px red, -5px 5px 5px yellow, 7px -7px blue; } /* 여러개(red, yellow, blue) 색상 사용할 때는 콤마(,)로 구분 */
+    </style>
+</head>
+<body>
+    <p class="text1">CSS3의 텍스트 그림자 효과 주기</p>
+
+    <p class="text2">CSS3의 텍스트 그림자 효과 주기</p>
+
+    <p class="text3">CSS3의 텍스트 그림자 효과 주기</p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes myAnimation1 {
+            0% { left: 0px; 
+                 background: orange; }
+            50% { top: 100px;
+                  left: 100px; 
+                  background: lime;
+                  transform: rotate(180deg); }
+            100% { left: 200px; 
+                   background: orange;
+                   transform: rotate(360deg); }
+        }
+        @keyframes myAnimation2 {
+            0% { left: 200px; 
+                 background: cyan; }
+            50% { top: 100px;
+                  left: 100px; 
+                  background: orange;
+                  transform: rotate(180deg); }
+            100% { left: 0px; 
+                   background: cyan;
+                   transform: rotate(360deg); }
+        }
+        #animation1 {
+            width: 100px; 
+            height: 100px;
+            position : relative;
+            top: 50px;
+            left: 0px;
+            background: orange;
+            animation: myAnimation1 3s ease-in 5s infinite alternate;
+        }
+        #animation2 {
+            width: 100px; 
+            height: 100px;
+            position : relative;
+            top: 50px;
+            left: 200px;
+            background: orange;
+            animation:myAnimation2 3s ease-in 5s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div id="animation1">myAnimation1 테스트</div>
+
+    <br><br>
+
+    <div id="animation2">myAnimation2 테스트</div>
+
+    <br><br>
+</body>
+</html>

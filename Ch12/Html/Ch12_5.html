@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  부채꼴 그리기  -->
+    <canvas id="myCanvas"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        canvas.width=200;
+        canvas.height=200;
+        canvas.style.backgroundColor="lightyellow";
+        ctx.strokeStyle="blue";
+        ctx.lineWidth=3;
+        ctx.fillStyle="skyBlue";
+        
+        ctx.beginPath();
+        ctx.moveTo(100, 100);
+        ctx.arc(100, 100, 75, 0, 90*Math.PI/180, true);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(110, 110);
+        ctx.arc(110, 110, 75, 0, 90*Math.PI/180, false);
+        ctx.closePath();
+        ctx.fill();
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td { border: 1px solid red; }
+
+        .table1 { width: 350px;
+                  table-layout: auto;
+                  border-collapse: separate;
+                  caption-side: top; 
+                  border-spacing: 5px 5px;
+                  empty-cells: hide; }
+
+        .table2 { width: 350px;
+                  table-layout: fixed;
+                  border-collapse: collapse;
+                  caption-side: bottom; }
+    </style>
+</head>
+<body>
+    <table border class="table1">
+        <caption>캡션 auto separate top 5px 5px hide</caption>
+        <tr>
+            <td>웹 프로그래밍</td>
+            <td>알고리즘</td>
+        </tr>
+        <tr>
+            <td>머신러닝</td>
+            <td> </td>
+        </tr>
+    </table>
+
+    <p>--------------------------------------------------------------</p>
+
+    <table border class="table2">
+        <caption>캡션 fixed collapse bottom</caption>
+        <tr>
+            <td>웹 프로그래밍</td>
+            <td>알고리즘</td>
+        </tr>
+        <tr>
+            <td>머신러닝</td>
+            <td> </td>
+        </tr>
+    </table>
+</body>
+</html>

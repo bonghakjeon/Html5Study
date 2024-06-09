@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        canvas.width=300;
+        canvas.height=300;
+        canvas.style.backgroundColor="lightyellow";
+        let img = new Image();
+        img.src="../../Image/smile.jpg";
+
+        img.onload = function() {
+            ctx.beginPath();
+            let pattern = ctx.createPattern(img, "repeat");
+            ctx.fillStyle = pattern;
+            ctx.arc(100, 100, 70, 0, 2*Math.PI, false);
+            ctx.fill();
+            ctx.strokeStyle=pattern;
+            ctx.lineWidth=25;
+            ctx.strokeRect(10, 10, 180, 180);
+        }
+        
+    </script>
+</body>
+</html>

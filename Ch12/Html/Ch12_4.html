@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        canvas.width=200;
+        canvas.height=200;
+        canvas.style.backgroundColor="lightyellow";
+        ctx.strokeStyle="blue";
+        ctx.lineWidth=3;
+        ctx.fillStyle="skyBlue";
+        ctx.beginPath();
+        // ctx.moveTo(100, 25);
+        // ctx.lineTo(175, 177);
+        // ctx.lineTo(25, 175);
+        // ctx.closePath();
+        // ctx.arc(100, 100, 75, 135*Math.PI/180, 315*Math.PI/180, true);
+        // ctx.fill();
+        ctx.arc(100, 100, 75, 0*Math.PI/180, 90*Math.PI/180, false);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(100, 100, 75, 90*Math.PI/180, 180*Math.PI/180, false);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(100, 100, 75, 180*Math.PI/180, 360*Math.PI/180, false);
+        ctx.fill();
+
+        // ctx.stoke();
+    </script>
+</body>
+</html>

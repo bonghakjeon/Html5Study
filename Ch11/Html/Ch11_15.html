@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="showTime();">
+    <div id="clock"></div><br/>
+    <script>
+        let timerID;
+        let clock = document.getElementById("clock");
+        function showTime() {
+            // 'clock.style.속성명 = 값' 생략 (교재 참조)
+            timerID = setInterval(function() {
+                today = new Date();
+                clock.innerHTML = today.toLocaleString();
+            }, 1000);
+        }
+
+        // "click"이라는 이벤트 발생시 익명 함수 function() 실행해서
+        //  함수 clearInterval 호출해서 시간 멈추기 
+        clock.addEventListener("click", function() {
+            clearInterval(timerID);
+        });
+    </script>
+</body>
+</html>

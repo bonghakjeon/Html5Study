@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  점선 그리기  -->
+    <canvas id="myCanvas"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        canvas.width=300;
+        canvas.height=300;
+        canvas.style.backgroundColor="lightyellow";
+        ctx.strokeStyle='black';
+        // ctx.strokeStyle='rgba(255,0,255,0.5)';
+        // ctx.lineWidth=30;
+        // ctx.lineJoin='bevel';
+        // ctx.lineCap='round';
+
+        ctx.beginPath();
+        ctx.lineWidth=10;
+        ctx.setLineDash([1, 2, 3, 4]);
+        ctx.rect(30, 30, 240, 240);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.setLineDash([10]);
+        ctx.arc(150, 150, 100, 0, 2*Math.PI);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.setLineDash([15, 5]);
+        ctx.fillStyle="lightblue";
+        ctx.rect(100, 100, 100, 100);
+        ctx.stroke();
+        ctx.fill();
+    </script>
+</body>
+</html> 

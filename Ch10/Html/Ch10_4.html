@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x;
+        function func1() {
+            let y;   // 지역변수: 함수 내에서 let으로 선언된 변수 
+            document.write("----- 함수 내에서 출력 -----<br/>");
+            document.write("변수 x: " + x + "<br/>");
+
+            x = "홍길동";
+            y = 30;
+            document.write("이름 " + x + ", 나이: "+ y + "<br/>");
+            x = 175.5;
+            document.write("신장:" + x + "<br/>");
+            // 전역변수: 함수 밖 또는 let 없이 선언된 변수 
+            addr = "서울 대학로";
+            document.write("주소:" + addr + "<br/>");
+        }
+        func1();
+        document.write("----- 함수 밖에서 출력 -----<br/>");
+        document.write("변수 x:" + x + "<br/>");
+        document.write("변수 addr:" + addr);
+    </script>
+</body>
+</html>

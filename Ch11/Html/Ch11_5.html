@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="myList">
+        <li id="item1">HTML5</li>
+        <li id="item1">CSS3</li>
+        <li id="item2">JavaScript</li>
+    </ul>
+    <input type="button" value="내용 가져오기" onclick="getMsg()">
+    <script>
+        function getMsg() {
+            let msg1 = document.getElementById("myList").innerHTML;  // id 값이 "myList" 요소<ul>에 속한 코드 HTML 형식(innerHTML)으로 가져오기 
+            alert(msg1);
+
+            let msg2 = document.getElementById("myList").textContent; // id 값이 "myList" 요소<ul>에 속한 코드 텍스트 형식(textContent)으로 가져오기 
+            alert(msg2);
+        }
+    </script>
+</body>
+</html>
