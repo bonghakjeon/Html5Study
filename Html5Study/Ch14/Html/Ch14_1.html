@@ -24,15 +24,24 @@
             myVideo = document.getElementById("video");
             play = document.getElementById('play');
             isSupp = myVideo.canPlayType("video/mp4");
-            if (isSupp != "") {
-                myVideo.src = "../../Video/Ch03_2.mp4";
+            if (isSupp != "") { // isSupp가 빈 문자열 ""이 아닌 경우에만 지원함.
+                myVideo.src = "../../Video/Ch03_2.mp4";   // 속성 src 통해 가지고 내가 원하는 비디오 파일 이름 "Ch03_2.mp4" 지정 
                 myVideo.load();
             }
         }
-        function playPause() { }
-        function sizeUp() { }
-        function sizeDown() { }
-        function sizeNormal() { }
+        function playPause() { 
+            if (myVideo.paused) {
+                myVideo.play();
+                play.innerHTML = "일시정지";
+            }
+            else {
+                myVideo.pause();
+                play.innerHTML = "재생하기";
+            }
+        }
+        function sizeUp() { myVideo.width += 50; }
+        function sizeDown() { myVideo.width -= 50; }
+        function sizeNormal() { myVideo.width = 350; }
     </script> 
 </body>
 </html>

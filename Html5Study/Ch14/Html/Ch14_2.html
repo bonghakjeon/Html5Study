@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="init()">
+    <audio id="player" src="../../Music/Luxery.mp3" controls></audio><br>
+    <p>재생 상태 : <span id="playtime"></span></p>
+    <p>음량 상태 : <span id="volume"></span></p>
+    <button id="playPause" onclick="play()">재생하기</button>
+    <button onclick="volumeUp()">볼륨 +</button>
+    <button onclick="volumneDown()">볼륨 -</button>
+    <script>
+        // 관련 자바스크립트 코드
+        let player = document.getElementById('player');
+        let btn = document.getElementById('playPause');
+
+        function init() { 
+            // 초기 음량 상태 10 설정 (player.volume - 0과 1사이의 값, Math.floor - 소수점 버림)
+            document.getElementById('volume').innerHTML = Math.floor(player.volume*10);
+        }
+
+        function play() {
+            if (player.paused) {
+                player.play();  
+                btn.innerHTML = "일시정지";
+            } else {
+                player.pause();
+                btn.innerHTML = "재생하기";
+            }
+        }
+
+        function volumeUp() { player.volume += 0.1; }
+        function volumneDown() { player.volume -= 0.1; }
+
+        player.addEventListener("volumechange", volumeState, false);
+
+        function volumeState(e) {
+            document.getElementById('volume').innerHTML = Math.floor(player.volume*10);
+        }
+
+        // 음악 파일 .mp3 실행 중에는 이벤트 timeupdate 계속 실행 - 이벤트 메서드 PlayTime 호출
+        player.addEventListener("timeupdate", PlayTime, false);
+
+        function PlayTime(e) {
+            // 음악 파일 .mp3 현재 재생시간 (초단위) (player.currentTime) / 음악 파일 .mp3 총 재생시간 (초단위) (player.duration)
+            document.getElementById("playtime").innerHTML = Math.floor(player.currentTime) + "/" + Math.floor(player.duration);
+        }
+
+        // 재생 종료 이벤트 onended 발생시 무명 메서드 실행 
+        player.onended = function () {
+            document.getElementById("playtime").innerHTML = "재생이 종료되었습니다.";
+            btn.innerHTML = "재생하기";
+        }
+    </script>
+</body>
+</html>
