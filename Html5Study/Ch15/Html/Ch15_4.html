@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="border:2px solid blue; width: 450px">
+        <p>
+            <b>이벤트 발생 : </b><br/>
+            <span id="event"></span>
+        </p>
+    </div>
+    <script>
+        window.addEventListener("storage", storageListener, false);
+        function storageListener(e) {
+            evt_msg = document.getElementById("event");
+            evt_msg.innerHTML = 
+                "키 : " + e.key + "<br>" +
+                "이전 값 : " + e.oldValue + " 이 새로운 값 "
+                             + e.newValue + " 로 변경.<br>" +
+                "이벤트가 발생한 웹 문서 : " + e.url + "<br>" +
+                "스토리지 객체 : " + e.storageArea; 
+            updateView();
+        }
+
+        
+    </script>
+</body>
+</html>

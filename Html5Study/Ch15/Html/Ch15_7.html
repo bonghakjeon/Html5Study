@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="PositionStart()" value="위치 추적 시작">
+    <input type="button" onclick="PositionStop()" value="위치 추적 정지">
+    <hr>
+    <div id="result"></div>
+
+    <script>
+        let watchId;
+
+        // 메서드 - 위치 추적 시작 
+        function PositionStart() { 
+            if(navigator.geolocation) {
+                watchId = navigator.geolocation.watchPosition(myPosition);
+            }
+        }
+
+        // 메서드 - 현재 위치 정보 정상적으로 가져올 때 실행되는 성공 콜백 함수 
+        function myPosition(position) { 
+            // 성공 콜백 함수 
+            document.getElementById("result").innerHTML = 
+                "현재 위치(위도 : "+ position.coords.latitude +", 경도 : "+ position.coords.longitude +")"
+        }
+
+        // 메서드 - 위치 추적 정지 
+        function PositionStop() { 
+            navigator.geolocation.clearWatch(watchId);
+        }
+    </script>
+</body>
+</html>

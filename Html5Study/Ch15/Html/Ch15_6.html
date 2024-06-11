@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="getLocation()"
+           value="위치 얻기 "><hr>
+    <div id="result"></div>
+
+    <script>
+        let pos = document.getElementById("result");
+        function getLocation() {
+            // 현재 위치 정보 얻기 
+            // geolocation 제공하는 경우 
+            if(navigator.geolocation) {
+                // 해당 getCurrentPosition 메서드 호출하고 
+                // 호출 결과 현재 위치 정보 가져오기 성공했을 때, 
+                // 수행 되어야 할 콜백함수 myPosition를 
+                // 해당 getCurrentPosition 메서드의 전달 인자로 적어주기 
+                // navigator.geolocation.getCurrentPosition(myPosition);
+                // enableHighAccuracy - true면 정확도가 높은 위치 정보 얻도록 요청 (반응 속도가 느려지거나 전류 소모량이 높을 수 있음)
+                // timeout - 위치 정보 파악에 대한 제한 시간 설정 (밀리초 단위)
+                //           제한 시간을 초과하면 TIMEOUT 오류 발생 
+                // maximumAge - 파악된 위치 정보의 유효 시간 설정 (밀리초 단위)
+                //              초과하면 해당 정보를 폐기한 후 새 위치 정보 파악 시도
+                //              0으로 지정하면 항상 새로운 위치 정보를 요청 
+                options = { enableHighAccuracy: true, 
+                            timeout: 1500,
+                            maximumAge: 5000 };
+                
+                navigator.geolocation.getCurrentPosition(myPosition, showError, options);
+            }
+            else {
+                pos.innerHTML = "Geolocation을 지원하지 않습니다.";
+            }
+        }
+
+        // position 매개변수에 전달되는 값 종류 
+        // getCurrentPosition 메서드 호출 결과
+        // 현재 위치 정보를 성공적으로 얻어올 때, 필요한 위치와 관련된 정보
+        function myPosition(position) {
+            // 성공 콜백 함수 
+            // 획득한 위치 정보 출력 
+            let now = new Date(position.timestamp);
+            let lat = position.coords.latitude;
+            let lng = position.coords.longitude;
+            let acc = position.coords.accuracy;
+            let msg = "현재 시간: " + now.toLocaleString() + "<br>" + 
+                      "현재 위치(위도: "+ lat +" 경도: "+ lng +")<br>" + 
+                      "정확도 : " + acc + "m<br>";
+            pos.innerHTML = msg;
+        }
+
+        function showError(error) {
+            // 오류가 발생했을 때 호출하는 콜백 함수 
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    pos.innerHTML = "권한이 없습니다."; 
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    pos.innerHTML = "위치 정보를 구할 수 없습니다.";
+                    break;
+                case error.TIMEOUT:
+                    pos.innerHTML = "제한 시간을 초과하였습니다.";
+                case error.UNKNOWN_ERROR:
+                    pos.innerHTML = "알 수 없는 오류가 발생하였습니다.";
+                    break;
+                default:
+                    pos.innerHTML = error.message;
+            }
+        }
+    </script>
+</body>
+</html>

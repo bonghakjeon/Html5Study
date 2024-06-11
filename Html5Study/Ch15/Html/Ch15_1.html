@@ -6,6 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!--  웹 스토리지란? 클라이언트에 데이터를 저장하기 위한 영역 (PC 응용 프로그램의 로컬 DB 같은 역할) -->
+    <!--  웹 스토리지 특징  -->
+    <!--  1. 저장 용량 - 도메인당 5MB  -->
+    <!--  2. 웹 서버로 요청을 하더라도 HTTP 메시지에는 포함되지 않음. -> 네트워크 부하 감소  -->
+    <!--  3. 로컬 스토리지는 유효기간이 없음 -> 사용자에 의한 명시적인 삭제에 의해서만 삭제 가능  -->
+    <!--  4. 세션 스토리지는 각 윈도우마다 독립적으로 데이터 저장  -->
+
+    <b>로컬 스토리지 저장</b>
+
+    <script>
+        // 웹 페이지 로드
+        window.onload = function() {
+            // 윈도우 로컬 스토리지가 자동 제공(생성)되는 경우 
+            if(window.localStorage) {
+                localStorage.setItem("HTML5", "2");
+                localStorage.algorithms = "3";
+                localStorage["machine learning"] = "3";
+            }
+        }
+    </script>
 </body>
 </html>

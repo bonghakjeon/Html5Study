@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="result" cols="45" rows="5"></textarea>
+
+    <script>
+        // 돔 객체 변수 만들기 
+        let key  = document.getElementById("key");    // 과목
+        let data = document.getElementById("data");   // 학년
+        updateView();   // 로컬 스토리지에 저장된 데이터 보여주기 
+
+        // 메서드 - 데이터 저장 
+        function storeData() {
+            if(window.localStorage) {
+                if(key.value !== "") {
+                    localStorage.setItem(key.value, data.value);
+                    alert("데이터 저장이 완료되었습니다.");
+                    updateView();
+                }
+            }
+        }
+
+        // 메서드 - 데이터 검색 
+        function retrieveData() {
+            if(window.localStorage) {
+                if(key.value !== "") {
+                    let value = localStorage.getItem(key.value);
+                    if(value != null) data.value = value;
+                    else alert("조회한" + key.value + "의 데이터는 존재하지 않음");
+                }
+            }
+        }
+
+        // 메서드 - 데이터 하나 삭제 
+        function removeOne() {
+            localStorage.removeItem(key.value);
+            updateView();
+        }
+
+        // 메서드 - 데이터 모두 삭제 
+        function removeAll() {
+            let answer = confirm("모든 데이터를 삭제할까요?");
+            if(answer) {
+                localStorage.clear();
+                alert("모든 데이터를 삭제하였습니다.");
+                updateView();
+            }
+        }
+
+        // 메서드 - 로컬 스토리지에 저장된 모든 데이터 화면 출력 
+        function updateView() {
+            let str = "";
+            for(let i = 0, len = localStorage.length; i < len; i++) {
+                let _key = localStorage.key(i);
+                let value = localStorage.getItem(_key);
+                str += "("+ _key +", "+ value +")" + "<br/>";
+            }
+            document.getElementById("result").innerHTML = str;
+            key.value = "";
+            data.value = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="getLocation()"
+           value="위치 얻기 "><hr>
+    <div id="result"></div>
+
+    <script>
+        let pos = document.getElementById("result");
+        function getLocation() {
+            // 현재 위치 정보 얻기 
+            // geolocation 제공하는 경우 
+            if(navigator.geolocation) {
+                // 해당 getCurrentPosition 메서드 호출하고 
+                // 호출 결과 현재 위치 정보 가져오기 성공했을 때, 
+                // 수행 되어야 할 콜백함수 myPosition를 
+                // 해당 getCurrentPosition 메서드의 전달 인자로 적어주기 
+                navigator.geolocation.getCurrentPosition(myPosition);
+            }
+            else {
+                pos.innerHTML = "Geolocation을 지원하지 않습니다.";
+            }
+        }
+
+        // position 매개변수에 전달되는 값 종류 
+        // getCurrentPosition 메서드 호출 결과
+        // 현재 위치 정보를 성공적으로 얻어올 때, 필요한 위치와 관련된 정보
+        function myPosition(position) {
+            // 성공 콜백 함수 
+            // 획득한 위치 정보 출력 
+            let now = new Date(position.timestamp);
+            let lat = position.coords.latitude;
+            let lng = position.coords.longitude;
+            let acc = position.coords.accuracy;
+            let msg = "현재 시간: " + now.toLocaleString() + "<br>" + 
+                      "현재 위치(위도: "+ lat +" 경도: "+ lng +")<br>" + 
+                      "정확도 : " + acc + "m<br>";
+            pos.innerHTML = msg;
+        }
+    </script>
+</body>
+</html>

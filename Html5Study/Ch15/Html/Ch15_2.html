@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>로컬 스토리지에서 모든 데이터 읽기</b><br/><br/>
+    <textarea id="result" cols="45" rows="5"></textarea>
+
+    <script>
+        window.onload = function() {
+            if(window.localStorage) {
+                data = document.getElementById("result");
+                data.value = "";
+                // localStorage.length - 로컬 스토리지에 저장된 데이터의 갯수 의미
+                for(let i = 0; i < localStorage.length; i++) {
+                    let key = localStorage.key(i);
+                    let value = localStorage.getItem(key);
+                    data.value += "("+ key +", "+ value +")" + " ";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
